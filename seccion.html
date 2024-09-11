@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Estudiantes</title>
+    <link rel="stylesheet" href="seccion.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <a href="inicio.html">Inicio</a>
+            <a href="cursos.html">Cursos</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="title">Agregar Estudiantes</h1>
+
+        <!-- Formulario de Estudiantes -->
+        <div class="input-group">
+            <input type="text" id="nombre" placeholder="Nombre del Estudiante" class="input-field">
+        </div>
+
+        <!-- Selección de Materias -->
+        <div class="input-group">
+            <h2>Materias</h2>
+            <div id="materias-container">
+                <button class="materia-btn" onclick="asignarDeber('Matemáticas')">Matemáticas</button>
+                <button class="materia-btn" onclick="asignarDeber('Lenguaje')">Lenguaje</button>
+                <button class="materia-btn" onclick="asignarDeber('Ciencias')">Ciencias</button>
+                <button class="materia-btn" onclick="asignarDeber('Estudios Sociales')">Estudios Sociales</button>
+                <button class="materia-btn" onclick="asignarDeber('Computación')">Computación</button>
+                <button class="materia-btn" onclick="asignarDeber('Inglés')">Inglés</button>
+            </div>
+        </div>
+
+        <!-- Selección de Sección -->
+        <div class="input-group">
+            <h2>Sección</h2>
+            <div id="seccion-container">
+                <button class="seccion-btn" onclick="seleccionarSeccion('A')">A</button>
+                <button class="seccion-btn" onclick="seleccionarSeccion('B')">B</button>
+                <button class="seccion-btn" onclick="seleccionarSeccion('C')">C</button>
+            </div>
+        </div>
+
+        <button id="agregar-estudiante-btn" class="submit-btn" onclick="agregarEstudiante()">Agregar Estudiante</button>
+
+        <h2>Lista de Estudiantes</h2>
+        <ul id="lista-estudiantes"></ul>
+    </div>
+
+    <!-- Modal para Asignar Deber -->
+    <div id="modal-deber" class="modal">
+        <div class="modal-content animated">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2 id="materia-seleccionada"></h2>
+            <input type="text" id="deber-input" placeholder="Escribe el deber" class="input-field">
+            <button class="submit-btn" onclick="guardarDeber()">Guardar Deber</button>
+        </div>
+    </div>
+
+    <script src="seccion.js"></script>
+</body>
+</html>
